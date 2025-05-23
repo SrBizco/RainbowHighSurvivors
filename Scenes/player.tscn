@@ -1,0 +1,56 @@
+[gd_scene load_steps=5 format=3 uid="uid://cqcejivrsi62t"]
+
+[ext_resource type="Texture2D" uid="uid://cbjrprxsd6e4v" path="res://icon.svg" id="1_4flbx"]
+[ext_resource type="Script" uid="uid://blydug1xyxj2s" path="res://Scenes/player.gd" id="1_cvnsp"]
+[ext_resource type="PackedScene" uid="uid://i4fm0t8himnu" path="res://Scenes/projectile.tscn" id="2_6t5aa"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_onrkg"]
+radius = 89.0
+height = 178.0
+
+[node name="Player" type="CharacterBody2D" groups=["Player"]]
+script = ExtResource("1_cvnsp")
+max_health = 100
+projectile_scene = ExtResource("2_6t5aa")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_4flbx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_onrkg")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CapsuleShape2D_onrkg")
+
+[node name="ShootTimer" type="Timer" parent="."]
+wait_time = 2.0
+autostart = true
+
+[node name="HealthBarContainer" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -39.0
+offset_top = 64.0
+offset_right = 1.0
+offset_bottom = 104.0
+
+[node name="HealthBackground" type="ColorRect" parent="HealthBarContainer"]
+layout_mode = 0
+offset_left = -8.0
+offset_top = 6.0
+offset_right = 92.0
+offset_bottom = 16.0
+
+[node name="HealthFill" type="ColorRect" parent="HealthBarContainer"]
+layout_mode = 0
+offset_left = -8.0
+offset_top = 6.0
+offset_right = 92.0
+offset_bottom = 16.0
+color = Color(1.97336e-06, 0.651394, 0.359417, 1)
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

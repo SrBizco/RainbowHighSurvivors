@@ -1,0 +1,121 @@
+[gd_scene load_steps=7 format=3 uid="uid://bxauih4xlhcxq"]
+
+[ext_resource type="PackedScene" uid="uid://cqcejivrsi62t" path="res://Scenes/player.tscn" id="1_bo1nx"]
+[ext_resource type="Script" uid="uid://et4nudny0u7j" path="res://Scenes/main.gd" id="1_kry3j"]
+[ext_resource type="Script" uid="uid://dr6okxsxqvt3o" path="res://Scenes/enemy_spawner.gd" id="2_8gbba"]
+[ext_resource type="PackedScene" uid="uid://c72k2xu2ggenm" path="res://Scenes/pause_menu.tscn" id="2_21xkr"]
+[ext_resource type="PackedScene" uid="uid://dcgbuej8o15nh" path="res://Scenes/enemy.tscn" id="3_jjvhh"]
+[ext_resource type="FontFile" uid="uid://0hn4u6wn6lld" path="res://Fonts/ThaleahFat.ttf" id="5_21xkr"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_kry3j")
+
+[node name="Player" parent="." instance=ExtResource("1_bo1nx")]
+position = Vector2(566, 331)
+
+[node name="HUD" type="CanvasLayer" parent="."]
+
+[node name="ExpBackground" type="ColorRect" parent="HUD"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -248.0
+offset_top = 18.0
+offset_right = 252.0
+offset_bottom = 28.0
+grow_horizontal = 2
+
+[node name="ExpFill" type="ColorRect" parent="HUD/ExpBackground"]
+layout_mode = 0
+offset_bottom = 10.0
+color = Color(0, 0.450302, 0.826627, 1)
+
+[node name="LevelLabel" type="Label" parent="HUD/ExpBackground"]
+layout_mode = 0
+offset_left = 454.0
+offset_top = -3.0
+offset_right = 491.0
+offset_bottom = 20.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_21xkr")
+theme_override_font_sizes/font_size = 16
+text = "Lvl.0"
+horizontal_alignment = 1
+
+[node name="TimerLabel" type="Label" parent="HUD"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -121.0
+offset_top = 41.0
+offset_right = 110.0
+offset_bottom = 80.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("5_21xkr")
+theme_override_font_sizes/font_size = 32
+text = "00:00"
+horizontal_alignment = 1
+
+[node name="WinLosePanel" type="Panel" parent="HUD"]
+process_mode = 2
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HUD/WinLosePanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 319.0
+offset_top = 160.0
+offset_right = -285.0
+offset_bottom = -125.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 7
+alignment = 1
+
+[node name="RetryButton" type="Button" parent="HUD/WinLosePanel/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_21xkr")
+theme_override_font_sizes/font_size = 32
+text = "Play Again"
+
+[node name="MenuButton" type="Button" parent="HUD/WinLosePanel/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_21xkr")
+theme_override_font_sizes/font_size = 32
+text = "Exit"
+
+[node name="Label" type="Label" parent="HUD/WinLosePanel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -308.0
+offset_top = 53.0
+offset_right = 305.0
+offset_bottom = 92.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("5_21xkr")
+theme_override_font_sizes/font_size = 42
+text = "You Win!"
+horizontal_alignment = 1
+
+[node name="PauseMenu" parent="." instance=ExtResource("2_21xkr")]
+visible = false
+
+[node name="MatchTimer" type="Timer" parent="."]
+autostart = true
+
+[node name="EnemySpawner" type="Node" parent="."]
+script = ExtResource("2_8gbba")
+enemy_scene = ExtResource("3_jjvhh")
+
+[node name="SpawnTimer" type="Timer" parent="EnemySpawner"]
+wait_time = 5.0
+autostart = true
