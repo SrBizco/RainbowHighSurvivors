@@ -6,13 +6,16 @@ extends Node2D
 @onready var timer_label = $HUD/TimerLabel
 @onready var win_lose_panel = $HUD/WinLosePanel
 @onready var player = $Player
+@onready var spawner = $EnemySpawner
 
 # Control de tiempo
 var seconds_elapsed: int = 0
-var max_duration: int = 1800  # 30 minutos
+var next_difficulty_increase := 120  # tiempo en segundos para la primera subida
+var max_duration: int = 1200  # 30 minutos
 
 func _ready():
-	# Conectar el timer de juego
+	AudioManagerSingleton.play_music(load("res://Audio/GameplayMusic.wav"))
+	$PowerUpManager.set_player($Player)
 	match_timer.timeout.connect(on_match_timer_timeout)
 	player.player_died.connect(show_defeat_screen)
 	
@@ -34,8 +37,14 @@ func on_match_timer_timeout():
 	seconds_elapsed += 1
 	update_timer_label()
 
+	# Solo subir dificultad si pasamos el umbral actual
+	if seconds_elapsed == next_difficulty_increase:
+		spawner.increase_difficulty()
+		next_difficulty_increase += 120  # programamos la siguiente subida
+
 	if seconds_elapsed >= max_duration:
 		show_victory_screen()
+
 
 func update_timer_label():
 	var minutes = seconds_elapsed / 60
@@ -51,6 +60,7 @@ func show_victory_screen():
 func show_defeat_screen():
 	if win_lose_panel.visible: return
 	get_tree().paused = true
+	AudioManagerSingleton.play_sfx(load("res://Audio/Death.wav"))
 	win_lose_panel.visible = true
 	win_lose_panel.get_node("Label").text = "💀 Game Over"
 

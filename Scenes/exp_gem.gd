@@ -23,4 +23,5 @@ func _physics_process(delta):
 func _on_body_entered(body: Node2D):
 	if body.is_in_group("Player"):
 		body.add_xp(xp_value)
+		AudioManagerSingleton.play_sfx(load("res://Audio/Exp.wav"))
 		queue_free()

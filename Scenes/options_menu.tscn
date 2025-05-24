@@ -1,0 +1,81 @@
+[gd_scene load_steps=3 format=3 uid="uid://bwwfjs3d57rl1"]
+
+[ext_resource type="FontFile" uid="uid://0hn4u6wn6lld" path="res://Fonts/ThaleahFat.ttf" id="1_plplt"]
+[ext_resource type="Script" uid="uid://dv06xcs28kb2j" path="res://Scenes/options_menu.gd" id="1_uj0ok"]
+
+[node name="OptionsMenu" type="CanvasLayer"]
+process_mode = 2
+script = ExtResource("1_uj0ok")
+
+[node name="OptionsPanel" type="Panel" parent="."]
+modulate = Color(1, 1, 1, 0.929412)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="OptionsLabel" type="Label" parent="OptionsPanel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -146.0
+offset_top = 63.0
+offset_right = 148.0
+offset_bottom = 131.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("1_plplt")
+theme_override_font_sizes/font_size = 32
+text = "Options"
+horizontal_alignment = 1
+
+[node name="VolumeLabel" type="Label" parent="OptionsPanel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -309.0
+offset_top = -68.0
+offset_right = -15.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_plplt")
+theme_override_font_sizes/font_size = 32
+text = "Master Volume:"
+horizontal_alignment = 1
+
+[node name="VolumeSlider" type="HSlider" parent="OptionsPanel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -4.0
+offset_top = -95.0
+offset_right = 329.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 2
+min_value = -30.0
+max_value = 0.0
+
+[node name="CloseButton" type="Button" parent="OptionsPanel"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -99.0
+offset_top = -88.0
+offset_right = 102.0
+offset_bottom = -35.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("1_plplt")
+theme_override_font_sizes/font_size = 32
+text = "Back"

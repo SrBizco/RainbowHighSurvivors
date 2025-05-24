@@ -1,0 +1,45 @@
+[gd_scene load_steps=3 format=3 uid="uid://s3qmuqf5f7tw"]
+
+[ext_resource type="Script" uid="uid://cfvfaorl3a2ax" path="res://Scenes/power_up_selector.gd" id="1_au7nj"]
+[ext_resource type="FontFile" uid="uid://0hn4u6wn6lld" path="res://Fonts/ThaleahFat.ttf" id="2_cpf7e"]
+
+[node name="PowerUpSelector" type="CanvasLayer"]
+process_mode = 2
+script = ExtResource("1_au7nj")
+
+[node name="PanelBackground" type="Panel" parent="."]
+modulate = Color(1, 1, 1, 0.917647)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelBackground"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -421.0
+offset_top = -211.0
+offset_right = 431.0
+offset_bottom = 238.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="LevelUpLabel" type="Label" parent="PanelBackground"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -191.0
+offset_top = 52.0
+offset_right = 195.0
+offset_bottom = 126.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_cpf7e")
+theme_override_font_sizes/font_size = 32
+text = "Level Up!"
+horizontal_alignment = 1

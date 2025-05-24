@@ -15,10 +15,21 @@ run/main_scene="uid://bbr0yec45d55x"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+AudioManagerSingleton="*res://Scenes/audio_manager.tscn"
+
+[display]
+
+window/size/viewport_width=1920
+window/size/viewport_height=1080
+window/size/mode=3
+
 [file_customization]
 
 folder_colors={
 "res://Art/": "yellow",
+"res://Audio/": "green",
 "res://Scenes/": "purple"
 }
 

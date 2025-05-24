@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 @export var speed := 60
 @export var max_health := 3
+@onready var sprite = $Sprite
 var health := max_health
 var player: Node2D = null
 
@@ -14,8 +15,17 @@ func _physics_process(_delta):
 		velocity = direction * speed
 		move_and_slide()
 
+		# Animación de caminar
+		if not sprite.is_playing():
+			sprite.play("walk")
+
+		# Flip horizontal
+		if direction.x != 0:
+			sprite.flip_h = direction.x < 0
+
 func take_damage(amount: int):
 	health -= amount
+	AudioManagerSingleton.play_sfx(load("res://Audio/EnemyHit.wav"))
 	print("Enemigo golpeado. Vida restante: ", health)
 
 	if health <= 0:

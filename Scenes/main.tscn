@@ -1,17 +1,24 @@
-[gd_scene load_steps=7 format=3 uid="uid://bxauih4xlhcxq"]
+[gd_scene load_steps=12 format=3 uid="uid://bxauih4xlhcxq"]
 
 [ext_resource type="PackedScene" uid="uid://cqcejivrsi62t" path="res://Scenes/player.tscn" id="1_bo1nx"]
 [ext_resource type="Script" uid="uid://et4nudny0u7j" path="res://Scenes/main.gd" id="1_kry3j"]
 [ext_resource type="Script" uid="uid://dr6okxsxqvt3o" path="res://Scenes/enemy_spawner.gd" id="2_8gbba"]
 [ext_resource type="PackedScene" uid="uid://c72k2xu2ggenm" path="res://Scenes/pause_menu.tscn" id="2_21xkr"]
 [ext_resource type="PackedScene" uid="uid://dcgbuej8o15nh" path="res://Scenes/enemy.tscn" id="3_jjvhh"]
+[ext_resource type="PackedScene" uid="uid://dnoun3dlme10p" path="res://Scenes/aoe_projectile.tscn" id="3_ynf5e"]
+[ext_resource type="PackedScene" uid="uid://cjck77h7nrojf" path="res://Scenes/manual_projectile.tscn" id="4_hptm8"]
 [ext_resource type="FontFile" uid="uid://0hn4u6wn6lld" path="res://Fonts/ThaleahFat.ttf" id="5_21xkr"]
+[ext_resource type="Script" uid="uid://br4q60eggpoiq" path="res://Scenes/power_up_manager.gd" id="7_6bp64"]
+[ext_resource type="PackedScene" uid="uid://bwwfjs3d57rl1" path="res://Scenes/options_menu.tscn" id="7_d1ilt"]
+[ext_resource type="PackedScene" uid="uid://s3qmuqf5f7tw" path="res://Scenes/power_up_selector.tscn" id="8_344ge"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_kry3j")
 
 [node name="Player" parent="." instance=ExtResource("1_bo1nx")]
 position = Vector2(566, 331)
+aoe_projectile_scene = ExtResource("3_ynf5e")
+manual_projectile_scene = ExtResource("4_hptm8")
 
 [node name="HUD" type="CanvasLayer" parent="."]
 
@@ -109,6 +116,9 @@ horizontal_alignment = 1
 [node name="PauseMenu" parent="." instance=ExtResource("2_21xkr")]
 visible = false
 
+[node name="OptionsMenu" parent="." instance=ExtResource("7_d1ilt")]
+visible = false
+
 [node name="MatchTimer" type="Timer" parent="."]
 autostart = true
 
@@ -119,3 +129,9 @@ enemy_scene = ExtResource("3_jjvhh")
 [node name="SpawnTimer" type="Timer" parent="EnemySpawner"]
 wait_time = 5.0
 autostart = true
+
+[node name="PowerUpManager" type="Node2D" parent="."]
+script = ExtResource("7_6bp64")
+
+[node name="PowerUpSelector" parent="." instance=ExtResource("8_344ge")]
+visible = false

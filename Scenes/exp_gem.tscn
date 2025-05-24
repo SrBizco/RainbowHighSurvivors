@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://c6p4441s0xt13"]
 
 [ext_resource type="Script" uid="uid://bqtk1sx04msfb" path="res://Scenes/exp_gem.gd" id="1_j05ow"]
-[ext_resource type="Texture2D" uid="uid://cbjrprxsd6e4v" path="res://icon.svg" id="2_xpps1"]
+[ext_resource type="Texture2D" uid="uid://byxiuam1u0xt0" path="res://Art/Items/ExpGem.png" id="2_xpps1"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_xpps1"]
 
@@ -9,7 +9,6 @@
 script = ExtResource("1_j05ow")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.347723, 0.12799)
 texture = ExtResource("2_xpps1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
