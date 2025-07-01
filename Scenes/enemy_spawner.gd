@@ -1,17 +1,21 @@
 extends Node
 
-@export var enemy_scene: PackedScene
+@export var enemy_scenes: Array[PackedScene] = []
 @export var spawn_radius := 500.0
-@export var spawn_interval := 2.0  # tiempo inicial entre enemigos
-@export var min_interval := 0.3    # tiempo mínimo permitido
-@export var interval_step := 0.2   # cuánto reducir cada vez
+@export var spawn_interval := 2.0
+@export var min_interval := 0.3
+@export var interval_step := 0.2
 
 func _ready():
 	$SpawnTimer.timeout.connect(_on_spawn_timer_timeout)
 	$SpawnTimer.wait_time = spawn_interval
 
 func _on_spawn_timer_timeout():
-	var enemy = enemy_scene.instantiate()
+	if enemy_scenes.size() == 0:
+		return
+
+	var chosen_scene = enemy_scenes[randi() % enemy_scenes.size()]
+	var enemy = chosen_scene.instantiate()
 	var player = get_tree().get_first_node_in_group("Player")
 	if player:
 		var angle = randf() * TAU
@@ -19,7 +23,6 @@ func _on_spawn_timer_timeout():
 		enemy.global_position = player.global_position + offset
 		get_tree().current_scene.add_child(enemy)
 
-		# 🪵 Log detallado
 		print("[SPAWN] Enemigo creado - tiempo actual entre spawns:", $SpawnTimer.wait_time)
 
 func increase_difficulty():

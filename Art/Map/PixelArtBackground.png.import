@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dsg4wt68lxqh4"
-path="res://.godot/imported/Bat-IdleFly.png-e1b88a559bcb702466e9cc144a064827.ctex"
+uid="uid://dp3h1rftiqrpp"
+path="res://.godot/imported/PixelArtBackground.png-8ed2bf5d24951350d2f391841b3a46aa.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/Enemy/Bat-IdleFly.png"
-dest_files=["res://.godot/imported/Bat-IdleFly.png-e1b88a559bcb702466e9cc144a064827.ctex"]
+source_file="res://Art/Map/PixelArtBackground.png"
+dest_files=["res://.godot/imported/PixelArtBackground.png-8ed2bf5d24951350d2f391841b3a46aa.ctex"]
 
 [params]
 

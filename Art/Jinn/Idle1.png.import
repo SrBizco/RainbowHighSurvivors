@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://f3ffre256btt"
-path="res://.godot/imported/Bat-Attack1.png-0afb85cef9a0e91347c3e1f4efdac814.ctex"
+uid="uid://c5ortqi2sxihv"
+path="res://.godot/imported/Idle1.png-cc081017314e3134662ded22e7be141b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/Enemy/Bat-Attack1.png"
-dest_files=["res://.godot/imported/Bat-Attack1.png-0afb85cef9a0e91347c3e1f4efdac814.ctex"]
+source_file="res://Art/Jinn/Idle1.png"
+dest_files=["res://.godot/imported/Idle1.png-cc081017314e3134662ded22e7be141b.ctex"]
 
 [params]
 

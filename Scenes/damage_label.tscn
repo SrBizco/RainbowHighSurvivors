@@ -1,0 +1,58 @@
+[gd_scene load_steps=6 format=3 uid="uid://ig23hh2hhrp5"]
+
+[ext_resource type="FontFile" uid="uid://0hn4u6wn6lld" path="res://Fonts/ThaleahFat.ttf" id="1_6fcvj"]
+[ext_resource type="Script" uid="uid://blpj5qd83dhqy" path="res://Scenes/damage_label.gd" id="2_0m621"]
+
+[sub_resource type="Animation" id="Animation_0m621"]
+resource_name = "float_up"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.8, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, -20), Vector2(2, -10), Vector2(4, -20), Vector2(6, -30)]
+}
+
+[sub_resource type="Animation" id="Animation_vcbt6"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -20)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_blahn"]
+_data = {
+&"RESET": SubResource("Animation_vcbt6"),
+&"float_up": SubResource("Animation_0m621")
+}
+
+[node name="damage_label" type="Label"]
+offset_left = 6.0
+offset_top = -30.0
+offset_right = 46.0
+theme_override_colors/font_color = Color(0.568627, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_6fcvj")
+theme_override_font_sizes/font_size = 32
+text = "0"
+horizontal_alignment = 1
+script = ExtResource("2_0m621")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_blahn")
+}
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

@@ -1,7 +1,7 @@
 [gd_scene load_steps=13 format=3 uid="uid://dcgbuej8o15nh"]
 
 [ext_resource type="Script" uid="uid://bk15yg8yhltus" path="res://Scenes/enemy.gd" id="1_1f0kj"]
-[ext_resource type="Texture2D" uid="uid://cmawsbuvuf2np" path="res://Art/Enemy/Bat-Run.png" id="2_1f0kj"]
+[ext_resource type="Texture2D" uid="uid://cmawsbuvuf2np" path="res://Art/Bat/Bat-Run.png" id="2_1f0kj"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4gyqm"]
 radius = 10.1415
@@ -77,6 +77,7 @@ animations = [{
 }]
 
 [node name="Enemy" type="CharacterBody2D" groups=["Enemy"]]
+collision_mask = 0
 script = ExtResource("1_1f0kj")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

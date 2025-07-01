@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ceqqy6no1klfk"
-path="res://.godot/imported/Bat-Attack2.png-0f13c7e4ce22ca5ce021910b50b16f71.ctex"
+path="res://.godot/imported/Bat-Attack2.png-0fd295cf3fa539c612297ddd1af6d35c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/Enemy/Bat-Attack2.png"
-dest_files=["res://.godot/imported/Bat-Attack2.png-0f13c7e4ce22ca5ce021910b50b16f71.ctex"]
+source_file="res://Art/Bat/Bat-Attack2.png"
+dest_files=["res://.godot/imported/Bat-Attack2.png-0fd295cf3fa539c612297ddd1af6d35c.ctex"]
 
 [params]
 

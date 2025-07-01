@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dacj7k4ri8ajq"
-path="res://.godot/imported/Bat-WakeUp.png-0ec7472e90a4ef0bdfb9637ff2eee474.ctex"
+uid="uid://cmawsbuvuf2np"
+path="res://.godot/imported/Bat-Run.png-a8210d487101e95ce0092b2b8a04ef85.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/Enemy/Bat-WakeUp.png"
-dest_files=["res://.godot/imported/Bat-WakeUp.png-0ec7472e90a4ef0bdfb9637ff2eee474.ctex"]
+source_file="res://Art/Bat/Bat-Run.png"
+dest_files=["res://.godot/imported/Bat-Run.png-a8210d487101e95ce0092b2b8a04ef85.ctex"]
 
 [params]
 

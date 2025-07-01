@@ -6,6 +6,8 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_xpps1"]
 
 [node name="ExpGem" type="Area2D"]
+collision_layer = 8
+collision_mask = 2
 script = ExtResource("1_j05ow")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

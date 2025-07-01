@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ctu1jrktvw4lv"
-path="res://.godot/imported/Bat-Hurt.png-1349727fd61855f1f5c5eb4964716a79.ctex"
+uid="uid://kq7ousrmspsp"
+path="res://.godot/imported/Walk3.png-bb3b9ea61ded14b6a1b3e15a88dd1a18.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/Enemy/Bat-Hurt.png"
-dest_files=["res://.godot/imported/Bat-Hurt.png-1349727fd61855f1f5c5eb4964716a79.ctex"]
+source_file="res://Art/Lizard/Walk3.png"
+dest_files=["res://.godot/imported/Walk3.png-bb3b9ea61ded14b6a1b3e15a88dd1a18.ctex"]
 
 [params]
 

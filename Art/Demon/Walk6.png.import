@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dwcdui0k5ydhu"
-path="res://.godot/imported/Bat-Die.png-395c4f8837273095a7458aa223094095.ctex"
+uid="uid://b7h88w6nfsh61"
+path="res://.godot/imported/Walk6.png-82be97885de64bee25dedf6fd3a809eb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/Enemy/Bat-Die.png"
-dest_files=["res://.godot/imported/Bat-Die.png-395c4f8837273095a7458aa223094095.ctex"]
+source_file="res://Art/Demon/Walk6.png"
+dest_files=["res://.godot/imported/Walk6.png-82be97885de64bee25dedf6fd3a809eb.ctex"]
 
 [params]
 

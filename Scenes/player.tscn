@@ -81,6 +81,8 @@ animations = [{
 size = Vector2(78, 86)
 
 [node name="Player" type="CharacterBody2D" groups=["Player"]]
+collision_layer = 2
+collision_mask = 7
 script = ExtResource("1_cvnsp")
 max_health = 100
 projectile_scene = ExtResource("2_6t5aa")

@@ -1,10 +1,28 @@
-[gd_scene load_steps=3 format=3 uid="uid://bbr0yec45d55x"]
+[gd_scene load_steps=4 format=3 uid="uid://bbr0yec45d55x"]
 
 [ext_resource type="Script" uid="uid://cqhtuge3kq648" path="res://Scenes/main_menu.gd" id="1_28flt"]
+[ext_resource type="Texture2D" uid="uid://dp3h1rftiqrpp" path="res://Art/Map/PixelArtBackground.png" id="2_1ehe0"]
 [ext_resource type="FontFile" uid="uid://0hn4u6wn6lld" path="res://Fonts/ThaleahFat.ttf" id="2_48xlc"]
 
 [node name="MainMenu" type="CanvasLayer"]
 script = ExtResource("1_28flt")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.0269, 1)
+texture = ExtResource("2_1ehe0")
+
+[node name="Panel" type="Panel" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.04, 1)
 
 [node name="CenterContainer" type="Control" parent="."]
 layout_mode = 3
