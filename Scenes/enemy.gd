@@ -19,15 +19,12 @@ func _physics_process(delta):
 		velocity = direction * speed
 		move_and_slide()
 
-		# Animación de caminar
 		if not sprite.is_playing():
 			sprite.play("walk")
 
-		# Flip horizontal
 		if direction.x != 0:
 			sprite.flip_h = direction.x < 0
 
-		# Revisar colisiones
 		var collision_count = get_slide_collision_count()
 		for i in range(collision_count):
 			var collision = get_slide_collision(i)
@@ -45,6 +42,7 @@ func take_damage(amount: int):
 	show_damage(amount)
 
 	if health <= 0:
+		await get_tree().create_timer(0.3).timeout
 		drop_xp()
 		queue_free()
 
@@ -60,3 +58,9 @@ func show_damage(amount: int):
 	damage_label.position = Vector2(0, -10)
 	damage_label.text = str(amount)
 	damage_label.start_animation()
+
+# 🔥 Nuevo método para recibir el multiplicador
+func apply_health_multiplier(multiplier: float):
+	max_health = int(max_health * multiplier)
+	health = max_health
+	print("[SPAWN] Salud ajustada con multiplicador %.2f → Nueva vida: %d" % [multiplier, max_health])

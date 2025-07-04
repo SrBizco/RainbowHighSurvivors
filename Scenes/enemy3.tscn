@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://dw6vxj1j4ctcg" path="res://Art/Jinn/Idle3.png" id="4_rmll4"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4gyqm"]
-radius = 10.1415
+radius = 5.18868
 height = 20.283
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_4yivd"]

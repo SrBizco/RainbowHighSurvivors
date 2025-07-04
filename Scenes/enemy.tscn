@@ -4,8 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://cmawsbuvuf2np" path="res://Art/Bat/Bat-Run.png" id="2_1f0kj"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4gyqm"]
-radius = 10.1415
-height = 20.283
+radius = 6.75
+height = 13.5
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_afpow"]
 atlas = ExtResource("2_1f0kj")

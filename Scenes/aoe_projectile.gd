@@ -17,5 +17,9 @@ func _physics_process(delta):
 			var now = Time.get_ticks_msec() / 1000.0
 			var last_hit = hit_timestamps.get(id, -INF)
 			if now - last_hit >= damage_interval:
-				body.take_damage(damage)
+				var player = get_tree().get_first_node_in_group("Player")
+				var final_damage = damage
+				if player:
+					final_damage = int(damage * player.damage_multiplier)
+				body.take_damage(final_damage)
 				hit_timestamps[id] = now

@@ -30,7 +30,7 @@ theme_override_font_sizes/font_size = 32
 text = "Options"
 horizontal_alignment = 1
 
-[node name="VolumeLabel" type="Label" parent="OptionsPanel"]
+[node name="MasterVolumeLabel" type="Label" parent="OptionsPanel"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -38,8 +38,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -309.0
-offset_top = -68.0
+offset_top = -266.0
 offset_right = -15.0
+offset_bottom = -198.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("1_plplt")
@@ -47,7 +48,7 @@ theme_override_font_sizes/font_size = 32
 text = "Master Volume:"
 horizontal_alignment = 1
 
-[node name="VolumeSlider" type="HSlider" parent="OptionsPanel"]
+[node name="MasterVolumeSlider" type="HSlider" parent="OptionsPanel"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -55,13 +56,81 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -4.0
-offset_top = -95.0
+offset_top = -293.0
 offset_right = 329.0
-offset_bottom = -10.0
+offset_bottom = -208.0
 grow_horizontal = 2
 grow_vertical = 2
-min_value = -30.0
-max_value = 0.0
+max_value = 1.0
+step = 0.01
+
+[node name="MusicVolumeLabel" type="Label" parent="OptionsPanel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -309.0
+offset_top = -67.0
+offset_right = -15.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_plplt")
+theme_override_font_sizes/font_size = 32
+text = "MUSIC:"
+horizontal_alignment = 1
+
+[node name="MusicVolumeSlider" type="HSlider" parent="OptionsPanel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -4.0
+offset_top = -94.0
+offset_right = 329.0
+offset_bottom = -9.0
+grow_horizontal = 2
+grow_vertical = 2
+max_value = 1.0
+step = 0.01
+
+[node name="SFXVolumeLabel" type="Label" parent="OptionsPanel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -309.0
+offset_top = -3.0
+offset_right = -15.0
+offset_bottom = 65.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_plplt")
+theme_override_font_sizes/font_size = 32
+text = "SFX:"
+horizontal_alignment = 1
+
+[node name="SFXVolumeSlider" type="HSlider" parent="OptionsPanel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -4.0
+offset_top = -30.0
+offset_right = 329.0
+offset_bottom = 55.0
+grow_horizontal = 2
+grow_vertical = 2
+max_value = 1.0
+step = 0.01
 
 [node name="CloseButton" type="Button" parent="OptionsPanel"]
 layout_mode = 1

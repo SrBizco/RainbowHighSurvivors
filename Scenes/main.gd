@@ -10,8 +10,7 @@ extends Node2D
 
 # Control de tiempo
 var seconds_elapsed: int = 0
-var next_difficulty_increase := 120  # tiempo en segundos para la primera subida
-var max_duration: int = 1200  # 30 minutos
+var max_duration: int = 600
 
 func _ready():
 	AudioManagerSingleton.play_music(load("res://Audio/GameplayMusic.wav"))
@@ -37,14 +36,12 @@ func on_match_timer_timeout():
 	seconds_elapsed += 1
 	update_timer_label()
 
-	# Solo subir dificultad si pasamos el umbral actual
-	if seconds_elapsed == next_difficulty_increase:
-		spawner.increase_difficulty()
-		next_difficulty_increase += 120  # programamos la siguiente subida
+	if seconds_elapsed % 120 == 0 and seconds_elapsed > 0:
+		spawner.health_multiplier *= 2
+		print("[DIFICULTAD+] Multiplicador de vida duplicado → %.2f" % spawner.health_multiplier)
 
 	if seconds_elapsed >= max_duration:
 		show_victory_screen()
-
 
 func update_timer_label():
 	var minutes = seconds_elapsed / 60

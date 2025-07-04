@@ -14,7 +14,7 @@ var powerups = {
 		"apply": func():
 			if is_ready():
 				player.attraction_range += 20.0,
-		"description": func(level): return "Increases XP attraction range to %d px" % (100 + level * 20)
+		"description": func(level): return "Increases XP pickup range by +%d%%" % (level * 20)
 	},
 
 	"speed": {
@@ -22,7 +22,7 @@ var powerups = {
 		"apply": func():
 			if is_ready():
 				player.speed += 20,
-		"description": func(level): return "Increases movement speed to %d" % (200 + level * 20)
+		"description": func(level): return "Increases movement speed by +%d%%" % (level * 10)
 	},
 
 	"regen": {
@@ -30,7 +30,7 @@ var powerups = {
 		"apply": func():
 			if is_ready():
 				player.start_regeneration(),
-		"description": func(level): return "Heals 1 HP every %d sec" % int(6 - level * 0.5)
+		"description": func(level): return "Heals 1 HP every %.1f sec" % max(0.5, 6 - level * 0.5)
 	},
 
 	"aoe_blast": {
@@ -38,7 +38,7 @@ var powerups = {
 		"apply": func():
 			if is_ready():
 				player.aoe_count += 1,
-		"description": func(level): return "Blast damages enemies in range (%dx explosion)" % level
+		"description": func(level): return "Adds +%d area explosion(s)" % level
 	},
 
 	"manual_projectile": {
@@ -46,15 +46,15 @@ var powerups = {
 		"apply": func():
 			if is_ready():
 				player.manual_projectile_count += 1,
-		"description": func(level): return "Adds %d front-firing projectile(s)" % level
+		"description": func(level): return "Adds +%d front-firing projectile(s)" % level
 	},
 
 	"damage_boost": {
 		"level": 0,
 		"apply": func():
 			if is_ready():
-				player.damage_multiplier += 0.1,
-		"description": func(level): return "Increases damage by %d%%" % int(10 * level)
+				player.damage_multiplier += 0.5,
+		"description": func(level): return "Increases damage by +%d%%" % (level * 50)
 	},
 
 	"auto_projectile": {
@@ -62,7 +62,7 @@ var powerups = {
 		"apply": func():
 			if is_ready():
 				player.auto_projectile_count += 1,
-		"description": func(level): return "Fires %d automatic projectile(s)" % level
+		"description": func(level): return "Adds +%d automatic projectile(s)" % level
 	},
 }
 

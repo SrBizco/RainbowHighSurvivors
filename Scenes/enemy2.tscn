@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://b7h88w6nfsh61" path="res://Art/Demon/Walk6.png" id="7_8nw3o"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4gyqm"]
-radius = 10.1415
+radius = 6.60377
 height = 20.283
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_5odvm"]
@@ -48,6 +48,7 @@ collision_mask = 0
 script = ExtResource("1_g6ed3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 4)
 scale = Vector2(4.24, 4)
 shape = SubResource("CapsuleShape2D_4gyqm")
 

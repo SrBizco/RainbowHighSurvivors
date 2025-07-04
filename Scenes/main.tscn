@@ -33,9 +33,13 @@ manual_projectile_scene = ExtResource("4_hptm8")
 [node name="HUD" type="CanvasLayer" parent="."]
 
 [node name="FadePanel" type="Panel" parent="HUD"]
-offset_right = 40.0
-offset_bottom = 40.0
-scale = Vector2(66.16, 1.92)
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -1297.0
+offset_right = 1303.0
+offset_bottom = 87.0
+grow_horizontal = 2
 
 [node name="ExpBackground" type="ColorRect" parent="HUD"]
 anchors_preset = 5
@@ -44,7 +48,7 @@ anchor_right = 0.5
 offset_left = -248.0
 offset_top = 18.0
 offset_right = 252.0
-offset_bottom = 28.0
+offset_bottom = 38.0
 grow_horizontal = 2
 
 [node name="ExpFill" type="ColorRect" parent="HUD/ExpBackground"]
@@ -54,13 +58,12 @@ color = Color(0, 0.450302, 0.826627, 1)
 
 [node name="LevelLabel" type="Label" parent="HUD/ExpBackground"]
 layout_mode = 0
-offset_left = 454.0
-offset_top = -3.0
-offset_right = 491.0
-offset_bottom = 20.0
+offset_left = 445.0
+offset_right = 493.0
+offset_bottom = 23.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("5_21xkr")
-theme_override_font_sizes/font_size = 16
+theme_override_font_sizes/font_size = 22
 text = "Lvl.0"
 horizontal_alignment = 1
 
