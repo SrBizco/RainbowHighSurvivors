@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://i4fm0t8himnu"]
+[gd_scene load_steps=6 format=3 uid="uid://i4fm0t8himnu"]
 
 [ext_resource type="Script" uid="uid://dva2khdx0uil5" path="res://Scenes/projectile.gd" id="1_yr2qt"]
 [ext_resource type="Texture2D" uid="uid://omsfkr6luslk" path="res://Art/Items/AutoShot.png" id="2_yr2qt"]
@@ -6,29 +6,13 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_qxf0c"]
 radius = 4.0
 
-[sub_resource type="Gradient" id="Gradient_yr2qt"]
-offsets = PackedFloat32Array(0, 0.239437, 0.642254, 0.929577)
-colors = PackedColorArray(1, 0.974264, 0, 1, 1, 0.724654, 0.0646672, 1, 1, 0.294169, 0, 1, 1, 1, 1, 0)
-
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_yr2qt"]
-gradient = SubResource("Gradient_yr2qt")
-
 [sub_resource type="Curve" id="Curve_d4467"]
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
 point_count = 2
 
-[sub_resource type="CurveTexture" id="CurveTexture_tl4hk"]
-curve = SubResource("Curve_d4467")
-
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_cgh1o"]
-particle_flag_disable_z = true
-gravity = Vector3(-98, 0, 0)
-scale_min = 4.0
-scale_max = 4.0
-scale_curve = SubResource("CurveTexture_tl4hk")
-color_ramp = SubResource("GradientTexture1D_yr2qt")
-turbulence_enabled = true
-turbulence_noise_scale = 1.0
+[sub_resource type="Gradient" id="Gradient_yr2qt"]
+offsets = PackedFloat32Array(0, 0.239437, 0.642254, 0.929577)
+colors = PackedColorArray(1, 0.974264, 0, 1, 1, 0.724654, 0.0646672, 1, 1, 0.294169, 0, 1, 1, 1, 1, 0)
 
 [node name="Projectile" type="Area2D"]
 script = ExtResource("1_yr2qt")
@@ -40,8 +24,14 @@ texture = ExtResource("2_yr2qt")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_qxf0c")
 
-[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+[node name="GPUParticles2D" type="CPUParticles2D" parent="."]
 amount = 25
-process_material = SubResource("ParticleProcessMaterial_cgh1o")
+fixed_fps = 30
+draw_order = 1
+gravity = Vector2(-98, 0)
+scale_amount_min = 4.0
+scale_amount_max = 4.0
+scale_amount_curve = SubResource("Curve_d4467")
+color_ramp = SubResource("Gradient_yr2qt")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

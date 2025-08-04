@@ -2,7 +2,6 @@ extends Node
 
 @onready var music = $MusicPlayer
 
-# Reproduce música de fondo (loop)
 func play_music(stream: AudioStream):
 	if stream == null:
 		return
@@ -10,7 +9,6 @@ func play_music(stream: AudioStream):
 	music.bus = "Music"
 	music.play()
 
-# Reproduce efecto de sonido (permitiendo varios simultáneos)
 func play_sfx(stream: AudioStream):
 	if stream == null:
 		return

@@ -1,0 +1,76 @@
+[gd_scene load_steps=14 format=3 uid="uid://b0a1iumr8eojb"]
+
+[ext_resource type="Script" uid="uid://bk15yg8yhltus" path="res://Scenes/enemy.gd" id="1_va45u"]
+[ext_resource type="Texture2D" uid="uid://p0srev6sgkmd" path="res://Art/Frost Guardian/walk_1.png" id="2_avs7u"]
+[ext_resource type="Texture2D" uid="uid://bvrt0flt1q0cq" path="res://Art/Frost Guardian/walk_2.png" id="3_e6qxx"]
+[ext_resource type="Texture2D" uid="uid://cbgu4n5ms7irc" path="res://Art/Frost Guardian/walk_3.png" id="4_6njix"]
+[ext_resource type="Texture2D" uid="uid://bh18ywc2qslvu" path="res://Art/Frost Guardian/walk_4.png" id="5_gj2j4"]
+[ext_resource type="Texture2D" uid="uid://1dm4050nhavc" path="res://Art/Frost Guardian/walk_5.png" id="6_sbogr"]
+[ext_resource type="Texture2D" uid="uid://bwfhir708rbbr" path="res://Art/Frost Guardian/walk_6.png" id="7_ly62n"]
+[ext_resource type="Texture2D" uid="uid://bbgl8ubcf0qce" path="res://Art/Frost Guardian/walk_7.png" id="8_ohr08"]
+[ext_resource type="Texture2D" uid="uid://bpqkp1wa1l1se" path="res://Art/Frost Guardian/walk_8.png" id="9_wa1i8"]
+[ext_resource type="Texture2D" uid="uid://dbw68jxl8l6ip" path="res://Art/Frost Guardian/walk_9.png" id="10_p8vu2"]
+[ext_resource type="Texture2D" uid="uid://de5qaes5nnl2n" path="res://Art/Frost Guardian/walk_10.png" id="11_7k66r"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4gyqm"]
+radius = 9.43396
+height = 31.6038
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_khey0"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_avs7u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_e6qxx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_6njix")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_gj2j4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_sbogr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_ly62n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_ohr08")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_wa1i8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_p8vu2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_7k66r")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 8.0
+}]
+
+[node name="Enemy" type="CharacterBody2D" groups=["Enemy"]]
+collision_mask = 0
+script = ExtResource("1_va45u")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(3, -4)
+scale = Vector2(9.92625, 5.47319)
+shape = SubResource("CapsuleShape2D_4gyqm")
+
+[node name="Sprite" type="AnimatedSprite2D" parent="."]
+position = Vector2(2, -9)
+scale = Vector2(-3, 2.93)
+sprite_frames = SubResource("SpriteFrames_khey0")
+animation = &"walk"
+frame_progress = 0.140972

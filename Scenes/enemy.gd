@@ -3,7 +3,7 @@ extends CharacterBody2D
 @export var speed := 60
 @export var max_health := 3
 @export var damage_per_tick := 1
-@export var damage_interval := 0.5 # segundos entre daños
+@export var damage_interval := 0.5
 
 @onready var sprite = $Sprite
 var health := max_health
@@ -59,8 +59,15 @@ func show_damage(amount: int):
 	damage_label.text = str(amount)
 	damage_label.start_animation()
 
-# 🔥 Nuevo método para recibir el multiplicador
 func apply_health_multiplier(multiplier: float):
 	max_health = int(max_health * multiplier)
 	health = max_health
 	print("[SPAWN] Salud ajustada con multiplicador %.2f → Nueva vida: %d" % [multiplier, max_health])
+
+func apply_health_and_damage_multipliers(health_mult: float, damage_mult: float):
+	max_health = int(max_health * health_mult)
+	damage_per_tick = int(damage_per_tick * damage_mult)
+	health = max_health
+	print("[SPAWN BOSS] Salud ×%.2f → %d | Daño ×%.2f → %d" % [
+		health_mult, max_health, damage_mult, damage_per_tick
+	])

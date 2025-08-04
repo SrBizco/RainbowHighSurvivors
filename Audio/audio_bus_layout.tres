@@ -1,4 +1,15 @@
-[gd_resource type="AudioBusLayout" format=3 uid="uid://dbcpviuwvcmfh"]
+[gd_resource type="AudioBusLayout" load_steps=3 format=3 uid="uid://dbcpviuwvcmfh"]
+
+[sub_resource type="AudioEffectCompressor" id="AudioEffectCompressor_gi0dh"]
+resource_name = "Compressor"
+threshold = -8.0
+ratio = 4.1
+release_ms = 100.0
+
+[sub_resource type="AudioEffectLimiter" id="AudioEffectLimiter_gi0dh"]
+resource_name = "Limiter"
+ceiling_db = -2.0
+threshold_db = -6.0
 
 [resource]
 bus/1/name = &"Music"
@@ -13,3 +24,7 @@ bus/2/mute = false
 bus/2/bypass_fx = false
 bus/2/volume_db = 0.0
 bus/2/send = &"Master"
+bus/2/effect/0/effect = SubResource("AudioEffectCompressor_gi0dh")
+bus/2/effect/0/enabled = true
+bus/2/effect/1/effect = SubResource("AudioEffectLimiter_gi0dh")
+bus/2/effect/1/enabled = true

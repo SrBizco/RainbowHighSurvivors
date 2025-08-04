@@ -2,7 +2,7 @@ extends Area2D
 
 @export var damage := 1
 @export var duration := 3.0
-@export var damage_interval := 0.5  # segundos
+@export var damage_interval := 0.5
 
 var hit_timestamps := {}
 

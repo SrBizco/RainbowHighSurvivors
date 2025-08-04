@@ -1,0 +1,84 @@
+[gd_scene load_steps=16 format=3 uid="uid://b1d2vrxmsbgqg"]
+
+[ext_resource type="Script" uid="uid://bk15yg8yhltus" path="res://Scenes/enemy.gd" id="1_l6h5k"]
+[ext_resource type="Texture2D" uid="uid://wa6qmpaqbl7x" path="res://Art/Demon Slime/demon_walk_1.png" id="2_yxu6k"]
+[ext_resource type="Texture2D" uid="uid://fyw4vd4yk257" path="res://Art/Demon Slime/demon_walk_2.png" id="3_qcllh"]
+[ext_resource type="Texture2D" uid="uid://b087ehb0hofvu" path="res://Art/Demon Slime/demon_walk_3.png" id="4_fryr5"]
+[ext_resource type="Texture2D" uid="uid://cc1y2ntwyboim" path="res://Art/Demon Slime/demon_walk_4.png" id="5_wy2qs"]
+[ext_resource type="Texture2D" uid="uid://cm5vwhe1dtpab" path="res://Art/Demon Slime/demon_walk_5.png" id="6_jdycx"]
+[ext_resource type="Texture2D" uid="uid://wcfjnxhbg6oh" path="res://Art/Demon Slime/demon_walk_6.png" id="7_1o5n8"]
+[ext_resource type="Texture2D" uid="uid://57rr4tie7sfb" path="res://Art/Demon Slime/demon_walk_7.png" id="8_03hdd"]
+[ext_resource type="Texture2D" uid="uid://5m5547t0ah1v" path="res://Art/Demon Slime/demon_walk_8.png" id="9_5xrwh"]
+[ext_resource type="Texture2D" uid="uid://dokbgh4mfcwid" path="res://Art/Demon Slime/demon_walk_9.png" id="10_m5e25"]
+[ext_resource type="Texture2D" uid="uid://c85pfp6b6jcqb" path="res://Art/Demon Slime/demon_walk_10.png" id="11_rqbr7"]
+[ext_resource type="Texture2D" uid="uid://048n15m1q8ug" path="res://Art/Demon Slime/demon_walk_11.png" id="12_2na5b"]
+[ext_resource type="Texture2D" uid="uid://hyqvt3pkuw4r" path="res://Art/Demon Slime/demon_walk_12.png" id="13_dal7f"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4gyqm"]
+radius = 9.43396
+height = 39.0141
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_khey0"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_yxu6k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_qcllh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_fryr5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_wy2qs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_jdycx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_1o5n8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_03hdd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_5xrwh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_m5e25")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_rqbr7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_2na5b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_dal7f")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 8.0
+}]
+
+[node name="Enemy" type="CharacterBody2D" groups=["Enemy"]]
+collision_mask = 0
+script = ExtResource("1_l6h5k")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(3, -4)
+scale = Vector2(-8.68815, 4.81877)
+shape = SubResource("CapsuleShape2D_4gyqm")
+
+[node name="Sprite" type="AnimatedSprite2D" parent="."]
+position = Vector2(2, -102)
+scale = Vector2(-3, 2.384)
+sprite_frames = SubResource("SpriteFrames_khey0")
+animation = &"walk"
+frame_progress = 0.279813
